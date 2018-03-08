@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>        
+        <script src="https://fb.me/react-15.2.1.js"></script>
+        <script src="https://fb.me/react-dom-15.2.1.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
+        <title>My First React application</title>
+    </head>
+    <body>
+        <div id='React-Container'></div>
+        <script type="text/babel">
+         
+         /*  tthe following is from  state less
+         const MyComponent=()=>{
+            
+                return <div>
+                   <h1>Hello World</h1>
+                   <
+                   <p>This is My first MyComponent by react component by state less component</p></div> 
+              
+         } */
+          
+          class MyComponent extends React.Component
+          {
+              render()
+              {
+                return <div>
+                   <h1>Hello World</h1>
+                   <h2>This is from prop :{this.props.text}</h2>
+                   <p>This is from children :{this.props.children}</p>
+                   <p>This is My first MyComponent by react component by EC6 format</p></div> 
+              }
+          }
+
+          /*  this is by react components 
+          var MyComponent=React.createClass({
+               render(){
+                   return <div>
+                   <h1>Hello World</h1>
+                   <p>This is My first MyComponent</p></div> 
+              }
+              })
+          */
+              //ReactDOM.render(<MyComponent/>,document.getElementById('React-Container'))
+              //ReactDOM.render(<MyComponent text="Hello World!"/>,document.getElementById('React-Container'))
+              ReactDOM.render(<div>
+                  <MyComponent text="Hello World!">
+                  This is message 1
+                        </MyComponent>
+                  <MyComponent text="This is another copy of same component">
+                        This is message 2
+                  </MyComponent>
+                  <MyComponent text="resuing same compoentn in another time!">
+                        This is message 3
+                  </MyComponent>
+                  </div>
+                  ,document.getElementById('React-Container')
+                  )
+             
+        </script>
+
+    </body>
+</html>
